@@ -16,7 +16,7 @@
   .fa-anchor,.fa-coffee {font-size:200px}
   </style>
 
-  <title>Shop Homepage - Start Bootstrap Template</title> <!--remember to change this before the presentation-->
+  <title>Food —— HawkerHelp</title> <!--remember to change this before the presentation-->
 
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -38,16 +38,16 @@
     <div class="w3-bar w3-red w3-card w3-left-align w3-large">
       <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
       <a href="/" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Home</a>
-      <a href="#about" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">About</a>
-      <a href="#work" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">How It Works</a>
+      <a href="/" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">About</a>
+      <a href="/" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">How It Works</a>
       <a href="/shop" class="w3-bar-item w3-button w3-padding-large w3-white">Look for hawkers near you</a>
     </div>
 
     <!-- Navbar on small screens -->
     <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
       <a href="/" class="w3-bar-item w3-button w3-padding-large">Home</a>
-      <a href="#about" class="w3-bar-item w3-button w3-padding-large">About</a>
-      <a href="#work" class="w3-bar-item w3-button w3-padding-large">How It Works</a>
+      <a href="/" class="w3-bar-item w3-button w3-padding-large">About</a>
+      <a href="/" class="w3-bar-item w3-button w3-padding-large">How It Works</a>
       <a href="/shop" class="w3-bar-item w3-button w3-padding-large">Look for hawkers near you</a>
     </div>
   </div>
@@ -59,7 +59,7 @@
 
       <div class="col-lg-3">
 
-        <h1 class="my-4">Look for hawkers!</h1>
+        <a href={{url_for("shop")}} style="text-decoration: none;color: black;"><h1 class="my-4">Look for hawkers!</h1></a>
         <div class="input-group md-form form-sm form-2 pl-0">
         <form action = '/search' class="form-inline active-cyan-4">
             <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search" aria-label="Search" name = "search">
@@ -72,7 +72,10 @@
 
         <div class="list-group">
           <a href="#" class="list-group-item">Hot Deals!</a>
-          <a href="#" class="list-group-item">Popular Cuisine</a>
+          <a href={{url_for("chinese")}} class="list-group-item">Chinese</a>
+          <a href={{url_for("malay")}} class="list-group-item">Malay</a>
+          <a href={{url_for("indian")}} class="list-group-item">Indian</a>
+          <a href={{url_for("western")}} class="list-group-item">Western</a>
           <a href="#" class="list-group-item">Elderly hawkers who need our help!</a>
         </div>
 
@@ -89,13 +92,13 @@
           </ol>
           <div class="carousel-inner" role="listbox">
             <div class="carousel-item active">
-              <img class="d-block img-fluid" src="/codeagainstcorona/static/images/slide1noodles.png" alt="Popular noodles" width:350px;height:900px;>
+              <img class="d-block img-fluid" src="../static/images/slide1noodles.jpg" alt="malaysia ipoh" style="width:auto;height:300px;align-content: center;">
             </div>
             <div class="carousel-item">
-              <img class="d-block img-fluid" src="/codeagainstcorona/static/images/slide2promos.png" alt="Promotions">
+              <img class="d-block img-fluid" src="../static/images/slide2promos.jpg" alt="promos" style="width:auto;height:300px;align-content: center;">
             </div>
             <div class="carousel-item">
-              <img class="d-block img-fluid" src="/codeagainstcorona/static/images/slide3fresh.png" alt="New hawkers">
+              <img class="d-block img-fluid" src="../static/images/slide3fresh.jpg" alt="new hawkers" style="width:auto;height:300px;align-content: center;">
             </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -129,10 +132,10 @@
           
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="https://sethlui.com/wp-content/uploads/2016/10/Finest-Songkees-Cuisine-spread.jpg" alt=""></a>
+              <a href="#"><img class="card-img-top" src="../static/images/songkee.jpg" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="#">Song Kee Fishball Noodle (Bishan)</a>
+                  <a href={{url_for("hawker2")}}>Song Kee Fishball Noodle (Bishan)</a>
                 </h4>
                 <h5>Bishan</h5>
                 <p class="card-text">Order by Whatsapp. No delivery for now.<br>
